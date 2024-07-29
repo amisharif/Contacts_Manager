@@ -56,7 +56,7 @@ namespace Services
 
         public List<PersonResponse> GetAllPersons()
         {
-            return _db.Persons.Select(temp => ConvertPersonToPersonResponse(temp)).ToList();
+            return _db.Persons.ToList().Select(temp => ConvertPersonToPersonResponse(temp)).ToList();
         }
 
         public PersonResponse? GetPersonByPersonID(Guid? personID)
